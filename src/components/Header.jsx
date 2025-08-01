@@ -1,44 +1,44 @@
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
-import { Button } from './ui/button'
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
-const Header = ({ onContactClick }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const location = useLocation()
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'Portfolio', path: '/portfolio' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
-  ]
+  const navigation = [
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+  ];
 
-  const isActive = (path) => location.pathname === path
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200/50">
+    <header className="header-fixed">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-sky-400 to-slate-500 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-blue rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">L</span>
             </div>
-            <span className="text-xl font-bold gradient-text">Lummy Marketing</span>
+            <span className="text-blue text-xl font-bold">Lummy Marketing</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+          <nav className="hidden md:flex space-x-8">
+            {navigation.map((item) => (
               <Link
                 key={item.name}
-                to={item.path}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-blue-600 ${
-                  isActive(item.path) 
-                    ? 'text-blue-600 border-b-2 border-blue-600 pb-1' 
-                    : 'text-gray-700'
+                to={item.href}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  isActive(item.href)
+                    ? 'text-blue bg-light-grey'
+                    : 'text-gray-700 hover:text-blue hover:bg-light-grey'
                 }`}
               >
                 {item.name}
@@ -46,12 +46,9 @@ const Header = ({ onContactClick }) => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button 
-              onClick={onContactClick}
-              className="bg-gradient-to-r from-sky-400 to-slate-500 hover:from-sky-500 hover:to-slate-600 text-white px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 pulse-glow"
-            >
+          {/* Desktop CTA Button */}
+          <div className="hidden md:block">
+            <Button className="btn-primary rounded-full px-6">
               Get Started
             </Button>
           </div>
@@ -60,7 +57,7 @@ const Header = ({ onContactClick }) => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="text-gray-700 hover:text-blue p-2"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -69,36 +66,34 @@ const Header = ({ onContactClick }) => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-lg">
-            <div className="px-4 py-6 space-y-4">
-              {navItems.map((item) => (
+          <div className="md:hidden mobile-menu-enter-active">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+              {navigation.map((item) => (
                 <Link
                   key={item.name}
-                  to={item.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block text-base font-medium transition-colors duration-200 hover:text-blue-600 ${
-                    isActive(item.path) ? 'text-blue-600' : 'text-gray-700'
+                  to={item.href}
+                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                    isActive(item.href)
+                      ? 'text-blue bg-light-grey'
+                      : 'text-gray-700 hover:text-blue hover:bg-light-grey'
                   }`}
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Button 
-                onClick={() => {
-                  onContactClick()
-                  setIsMenuOpen(false)
-                }}
-                className="w-full bg-gradient-to-r from-sky-400 to-slate-500 hover:from-sky-500 hover:to-slate-600 text-white py-2 rounded-lg transition-all duration-300"
-              >
-                Get Started
-              </Button>
+              <div className="pt-4">
+                <Button className="btn-primary w-full rounded-full">
+                  Get Started
+                </Button>
+              </div>
             </div>
           </div>
         )}
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
 
