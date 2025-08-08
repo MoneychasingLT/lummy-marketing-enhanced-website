@@ -15,19 +15,13 @@ const Footer = () => {
               Empowering businesses with data-driven digital marketing strategies that deliver measurable results and sustainable growth.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Instagram size={20} />
-              </a>
-            </div>
+  <a href="https://facebook.com/profile.php?id=61579224539820" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
+    <Facebook size={20} />
+  </a>
+  <a href="https://instagram.com/lummy.marketing/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">
+    <Instagram size={20} />
+  </a>
+</div>
           </div>
 
           {/* Quick Links */}
