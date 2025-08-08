@@ -284,7 +284,7 @@ const Contact = () => {
                     <Phone className="mr-3 text-green-500" size={20} />
                     <div>
                       <div className="font-medium">Call Us Now</div>
-                      <div className="text-sm text-gray-500">+1 (713) 555-0123</div>
+                      <div className="text-sm text-gray-500">+1 (630) 934-6261</div>
                     </div>
                   </Button>
                   
