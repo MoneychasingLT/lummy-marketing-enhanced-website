@@ -23,10 +23,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-blue rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">L</span>
-            </div>
-            <span className="text-blue text-xl font-bold">Lummy Marketing</span>
+            <img src="/logo.png" alt="Lummy Marketing" className="h-8 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
