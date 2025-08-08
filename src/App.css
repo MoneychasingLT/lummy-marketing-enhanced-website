@@ -218,28 +218,55 @@
 }
 
 
-/* Ensure Select dropdown content has a solid background and clear text */
-.radix-themes-popper-content {
-  background-color: white !important; /* Solid white background */
-  border: 1px solid #e5e7eb !important; /* Subtle border */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
-  z-index: 9999 !important; /* Ensure it's on top */
-}
-
-/* Ensure individual Select items have clear text and hover state */
-.radix-themes-popper-content .radix-themes-select-item {
-  background-color: white !important; /* Solid white background for items */
-  color: #1f2937 !important; /* Dark text color */
-  padding: 0.5rem 1rem !important; /* Add some padding */
-}
-
-.radix-themes-popper-content .radix-themes-select-item:hover {
-  background-color: #f3f4f6 !important; /* Light grey on hover */
-  cursor: pointer; /* Indicate it's clickable */
-}
-
-/* Ensure the SelectTrigger (the visible part of the dropdown) also has a solid background */
-.radix-themes-select-trigger {
+/* Fix for all dropdown/select components - comprehensive approach */
+[data-radix-popper-content-wrapper] {
   background-color: white !important;
-  color: #1f2937 !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  z-index: 50 !important;
+}
+
+[data-radix-select-content] {
+  background-color: white !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  z-index: 50 !important;
+}
+
+[data-radix-select-item] {
+  background-color: white !important;
+  color: #374151 !important;
+  padding: 8px 12px !important;
+  cursor: pointer !important;
+}
+
+[data-radix-select-item]:hover {
+  background-color: #f3f4f6 !important;
+}
+
+/* Alternative approach using more general selectors */
+.select-content,
+.dropdown-content,
+[role="listbox"] {
+  background-color: white !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  z-index: 50 !important;
+}
+
+.select-item,
+.dropdown-item,
+[role="option"] {
+  background-color: white !important;
+  color: #374151 !important;
+  padding: 8px 12px !important;
+}
+
+.select-item:hover,
+.dropdown-item:hover,
+[role="option"]:hover {
+  background-color: #f3f4f6 !important;
 }
