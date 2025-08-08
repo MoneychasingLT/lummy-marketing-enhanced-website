@@ -45,7 +45,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Call Us',
-      details: ['+1 (713) 555-0123', 'Mon-Fri 9AM-6PM CST'],
+      details: ['+1 (630) 934 6261', 'Mon-Fri 9AM-6PM CST'],
       color: 'from-green-500 to-emerald-600'
     },
     {
