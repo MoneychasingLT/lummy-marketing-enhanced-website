@@ -218,19 +218,28 @@
 }
 
 
-/* Fix for Select dropdown content */
+/* Ensure Select dropdown content has a solid background and clear text */
 .radix-themes-popper-content {
-  background-color: white !important;
-  border: 1px solid #e5e7eb !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-  z-index: 9999 !important;
+  background-color: white !important; /* Solid white background */
+  border: 1px solid #e5e7eb !important; /* Subtle border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
+  z-index: 9999 !important; /* Ensure it's on top */
 }
 
+/* Ensure individual Select items have clear text and hover state */
 .radix-themes-popper-content .radix-themes-select-item {
-  background-color: white !important;
-  color: #1f2937 !important;
+  background-color: white !important; /* Solid white background for items */
+  color: #1f2937 !important; /* Dark text color */
+  padding: 0.5rem 1rem !important; /* Add some padding */
 }
 
 .radix-themes-popper-content .radix-themes-select-item:hover {
-  background-color: #f3f4f6 !important;
+  background-color: #f3f4f6 !important; /* Light grey on hover */
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+/* Ensure the SelectTrigger (the visible part of the dropdown) also has a solid background */
+.radix-themes-select-trigger {
+  background-color: white !important;
+  color: #1f2937 !important;
 }
