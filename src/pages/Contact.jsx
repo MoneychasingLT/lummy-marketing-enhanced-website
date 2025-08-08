@@ -141,7 +141,7 @@ const Contact = () => {
                 </p>
               </CardHeader>
               <CardContent className="p-8">
-               <form name="contact" method="POST" data-netlify="true" action="/thank-you" onSubmit={handleSubmit} className="space-y-4">
+               <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-6">
   <input type="hidden" name="form-name" value="contact" />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
