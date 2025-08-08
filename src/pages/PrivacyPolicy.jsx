@@ -3,7 +3,7 @@ import React from 'react';
 const PrivacyPolicy = () => {
   return (
     <div className="pt-16 min-h-screen bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4 py-10">
+      <div className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-8 text-gray-900">Privacy Policy</h1>
         <p className="text-gray-700 mb-6">
           This Privacy Policy describes how Lummy Marketing ("we," "us," or "our") collects, uses, and discloses information when you visit our website <a href="https://lummymarketing.com" className="text-blue-600 hover:underline">lummymarketing.com</a> (the "Site" ) or otherwise interact with us.
