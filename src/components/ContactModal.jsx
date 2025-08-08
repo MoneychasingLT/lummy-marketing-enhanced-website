@@ -70,7 +70,7 @@ const ContactModal = ({ isOpen, onClose }) => {
           <div className="flex justify-between items-center">
             <div>
               <h2 className="text-2xl font-bold text-white">Get Started Today</h2>
-              <p className="text-blue-100 mt-1">Let's grow your business together</p>
+              <p className="text-blue-100 mt-1">Let\'s grow your business together</p>
             </div>
             <button
               onClick={onClose}
@@ -82,7 +82,8 @@ const ContactModal = ({ isOpen, onClose }) => {
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+        <form name="contact-modal" method="POST" data-netlify="true" action="/thank-you" onSubmit={handleSubmit} className="p-6 space-y-4">
+          <input type="hidden" name="form-name" value="contact-modal" />
           {/* Name Field */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -164,6 +165,11 @@ const ContactModal = ({ isOpen, onClose }) => {
             />
           </div>
 
+          <p className="text-sm text-gray-600 mb-4 text-center">
+            By submitting this form, you agree to be contacted by Lummy Marketing via SMS or email. 
+            You can reply STOP to opt out at any time.
+          </p>
+
           {/* Form Actions */}
           <div className="flex gap-3 pt-4">
             <Button
@@ -199,4 +205,3 @@ const ContactModal = ({ isOpen, onClose }) => {
 };
 
 export default ContactModal;
-
