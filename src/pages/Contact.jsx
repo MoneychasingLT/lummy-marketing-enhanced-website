@@ -260,12 +260,6 @@ const handleSubmit = async (e) => {
                   >
                     <Send size={20} className="mr-2" />
                     Send Message
-
-                    {formSubmitted && (
-  <p className="text-green-600 text-center mt-4 font-semibold">
-    Thank you for your message! We will get back to you within 24 hours.
-  </p>
-)}
                   </Button>
 
                  <p className="text-sm text-gray-600 mt-4 text-center">
@@ -273,6 +267,11 @@ const handleSubmit = async (e) => {
   You can reply STOP to opt out at any time.
 </p>
                 </form>
+                {formSubmitted && (
+  <p className="text-green-600 text-center mt-4 font-semibold">
+    Thank you for your message! We will get back to you within 24 hours.
+  </p>
+)}
               </CardContent>
             </Card>
 
