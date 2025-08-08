@@ -216,3 +216,19 @@
   padding-top: 4rem !important; /* Add some padding above the line */
   margin-top: 4rem !important; /* Add some margin above the line */
 }
+/* Fix for Select dropdown content */
+.radix-themes-popper-content {
+  background-color: white !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  z-index: 9999 !important;
+}
+
+.radix-themes-popper-content .radix-themes-select-item {
+  background-color: white !important;
+  color: #1f2937 !important;
+}
+
+.radix-themes-popper-content .radix-themes-select-item:hover {
+  background-color: #f3f4f6 !important;
+}
