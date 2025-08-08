@@ -82,7 +82,7 @@ const ContactModal = ({ isOpen, onClose }) => {
         </div>
 
         {/* Form */}
-        <form name="contact-modal" method="POST" data-netlify="true" action="/thank-you" onSubmit={handleSubmit} className="p-6 space-y-4">
+       <form name="contact-modal" method="POST" data-netlify="true" className="space-y-4">
           <input type="hidden" name="form-name" value="contact-modal" />
           {/* Name Field */}
           <div>
