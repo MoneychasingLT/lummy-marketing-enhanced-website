@@ -27,24 +27,28 @@ const ContactModal = ({ isOpen, onClose }) => {
     'Analytics & Reporting'
   ];
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert('Thank you for your message! We\'ll get back to you within 24 hours.');
-      onClose();
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
-      });
-    }, 2000);
-  };
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  // You can add your Netlify form submission logic here if needed
+  // For now, we'll just simulate success
+
+  setFormSubmitted(true);
+  // Optionally, reset form after a delay
+  setTimeout(() => {
+    setFormData({
+      fullName: '',
+      email: '',
+      company: '',
+      phone: '',
+      service: '',
+      budget: '',
+      message: ''
+    });
+    setFormSubmitted(false);
+  }, 5000); // Message disappears after 5 seconds
+};
 
   const handleChange = (field, value) => {
     setFormData(prev => ({
@@ -199,6 +203,11 @@ const ContactModal = ({ isOpen, onClose }) => {
             </Button>
           </div>
         </form>
+        {formSubmitted && (
+  <p className="text-green-600 text-center mt-4 font-semibold">
+    Thank you for your message! We will get back to you within 24 hours.
+  </p>
+)}
       </div>
     </div>
   );
