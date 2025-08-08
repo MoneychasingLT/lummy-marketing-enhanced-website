@@ -17,9 +17,16 @@ const Contact = () => {
     message: ''
   })
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    alert('Thank you for your message! We will get back to you within 24 hours.')
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  // You can add your Netlify form submission logic here if needed
+  // For now, we'll just simulate success
+
+  setFormSubmitted(true);
+  // Optionally, reset form after a delay
+  setTimeout(() => {
     setFormData({
       fullName: '',
       email: '',
@@ -28,8 +35,10 @@ const Contact = () => {
       service: '',
       budget: '',
       message: ''
-    })
-  }
+    });
+    setFormSubmitted(false);
+  }, 5000); // Message disappears after 5 seconds
+};
 
   const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }))
