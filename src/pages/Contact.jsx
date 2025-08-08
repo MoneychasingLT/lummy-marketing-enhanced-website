@@ -252,6 +252,11 @@ const Contact = () => {
                     <Send size={20} className="mr-2" />
                     Send Message
                   </Button>
+
+                 <p className="text-sm text-gray-600 mt-4 text-center">
+  By submitting this form, you agree to be contacted by Lummy Marketing via SMS or email. 
+  You can reply STOP to opt out at any time.
+</p>
                 </form>
               </CardContent>
             </Card>
