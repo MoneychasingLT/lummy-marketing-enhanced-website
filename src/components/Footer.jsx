@@ -9,10 +9,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">L</span>
-              </div>
-              <span className="text-xl font-bold">Lummy Marketing</span>
+              <img src="/logowhite.png" alt="Lummy Marketing" className="h-8 w-auto" />
             </div>
             <p className="text-gray-400 text-sm">
               Empowering businesses with data-driven digital marketing strategies that deliver measurable results and sustainable growth.
