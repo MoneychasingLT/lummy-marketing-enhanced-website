@@ -73,7 +73,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2025 Lummy Marketing. All rights reserved. | Privacy Policy | Terms of Service
+            © 2025 Lummy Marketing. All rights reserved. | <Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link> | Terms of Service
           </p>
         </div>
       </div>
